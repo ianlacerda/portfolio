@@ -132,23 +132,28 @@ background-color:rgb(187, 255, 255);
   background-color: #4CAF50;
   color: white;
   padding: 16px;
+  display: inline;
   font-size: 16px;
   border: none;
   cursor: pointer;
 }
-
+.lista div{
+  align: center;
+  display:inline;
+/*   float: left; */
+}
 .dropdown {
   position: absolute;
   alig: left;
-  margin-left: -54px;
-  display: inline;
+  margin-left: 0px;
+  display: inline-block;
 }
 .cbio .dropdown{
   positionL: absolute !important;
 }
 
 .dropdown-content {
-  display: none;
+  display: none !important;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
@@ -166,7 +171,7 @@ background-color:rgb(187, 255, 255);
 .dropdown-content a:hover {background-color: #f1f1f1}
 
 .dropdown:hover .dropdown-content {
-  display: block;
+  display: block !important;
 }
 
 .dropdown:hover .dropbtn {
