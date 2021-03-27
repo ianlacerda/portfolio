@@ -6,15 +6,15 @@
   margin-right:1em;
   box-shadow: 4px 4px 0px #44ACAC;
 }
-.titul{
-  color:white;
-  font-family: Oswald;
-  font-size: 8em;
-  /* float: left; */
-  text-transform: uppercase;
-  font-weight: 800;
-  text-shadow:0px 4px 0px #3A9292, 4px 0px 0px #3A9292, -4px 0px 0px #3A9292, 0px -4px 0px #3A9292, 4px 4px 0px #3A9292, -4px -4px 0px #3A9292, 10px 10px 0px #3A9292;
-  display: inline;
+.titul {
+    color: white !important;
+    font-family: Oswald;
+    font-size: 6.4em !important;
+    /* float: left; */
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 0px 4px 0px #3a9292, 4px 0px 0px #3a9292, -4px 0px 0px #3a9292, 0px -4px 0px #3a9292, 4px 4px 0px #3a9292, -4px -4px 0px #3a9292, 10px 10px 0px #3a9292;
+    display: inline;
 }
 
 .subtit{
