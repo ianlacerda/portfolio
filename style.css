@@ -1,22 +1,27 @@
 .avatar {
-  height: 7em;
-  display: inline;
-  border-radius: 8em;
-  /* float: left; */
-  margin-right:1em;
-  box-shadow: 4px 4px 0px #44ACAC;
+    height: 8em;
+    display: inline-block;
+    margin-top: 0em;
+    vertical-align: top;
+    border-radius: 8em;
+    /* float: left; */
+    margin-right: 1em;
+    box-shadow: 4px 4px 0px #44acac;
 }
+
+.titul {
 .titul {
     color: white !important;
     font-family: Oswald;
-    font-size: 6.4em !important;
+    font-size: 7.4em !important;
     /* float: left; */
+    vertical-align: top !important;
     text-transform: uppercase;
+    margin-block-start: 0em !important;
     font-weight: 800;
     text-shadow: 0px 4px 0px #3a9292, 4px 0px 0px #3a9292, -4px 0px 0px #3a9292, 0px -4px 0px #3a9292, 4px 4px 0px #3a9292, -4px -4px 0px #3a9292, 10px 10px 0px #3a9292;
-    display: inline;
+    display: inline-block;
 }
-
 .subtit{
   color:#222E50;
   font-family: Oswald;
