@@ -30,17 +30,16 @@
 }
 
 
-.cbio{
-  margin-top: 2em;
-  /* float: left; */
-  display: block;
-  padding: 0;
-  color:white;
-  list-style-type: none;
-  overflow: auto;
-  width: 100%; 
-  background-color: transparent;
-  transition: all 400ms ease;
+.cbio {
+    margin-top: 2em;
+    display: block;
+    padding: 0;
+    color: white;
+    margin: 3em auto 0em auto;
+    overflow: auto;
+    width: 400px;
+    background-color: transparent;
+    transition: all 400ms ease;
 }
 
 .cbio li{
