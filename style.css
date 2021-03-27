@@ -1,0 +1,120 @@
+.avatar {
+  height: 7em;
+  display: inline;
+  border-radius: 8em;
+  /* float: left; */
+  margin-right:1em;
+  box-shadow: 4px 4px 0px #44ACAC;
+}
+.titul{
+  color:white;
+  font-family: Oswald;
+  font-size: 8em;
+  /* float: left; */
+  text-transform: uppercase;
+  font-weight: 800;
+  text-shadow:0px 4px 0px #3A9292, 4px 0px 0px #3A9292, -4px 0px 0px #3A9292, 0px -4px 0px #3A9292, 4px 4px 0px #3A9292, -4px -4px 0px #3A9292, 10px 10px 0px #3A9292;
+  display: inline;
+}
+
+.subtit{
+  color:#222E50;
+  font-family: Oswald;
+  font-weight: 200;
+  font-size: 1.8em;
+  /* float: lef; */
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  /* text-shadow: -10px 0px 0px rgba(200, 100, 100, 0.7), 0px 10px 0px rgba(100, 200, 100, 0.7), 10px 0px 0px rgba(100, 100, 200, 0.7); */
+}
+
+
+.cbio{
+  margin-top: 2em;
+  /* float: left; */
+  display: block;
+  padding: 0;
+  color:white;
+  list-style-type: none;
+  overflow: auto;
+  width: 100%; 
+  background-color: transparent;
+  transition: all 400ms ease;
+}
+
+.cbio li{
+  float: left;
+  padding: 0.8em;
+  background-color: #3A9292;
+  list-style-type: none;
+  transition: all 400ms ease;
+}
+.cbio li:hover{
+  background: white;
+  box-shadow: 0px 0px 0px 1px #3A9292 inset;
+}
+
+.cbio li.ativa{
+background-color:rgb(34, 82, 82);
+transition: all 400ms ease;
+}
+
+.cbio li.ativa:hover{
+background-color:rgb(187, 255, 255);
+}
+.cbio li:hover a{
+  color: #3A9292;
+}
+
+
+.cbio li a{
+  color:white;
+  text-decoration: none;
+  transition: all 400ms ease;
+}
+
+
+.links {
+  margin-top: 2em;
+  list-style-type: square;
+  color: #3A9292;
+  padding-bottom: 20em;
+}
+
+.links li{
+    padding-bottom: 0.55em;
+}
+
+.links a{
+  color:#44ACAC;
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 2em;
+  text-transform: uppercase;
+  /* margin-top: -2em; */
+  transition: all 400ms ease;
+  text-decoration: none;
+}
+.links a:hover{
+  color:black;
+  font-family: Raleway;
+  font-weight: 400;
+  font-size: 2.2em;
+  text-transform: uppercase;
+  /* margin-top: -2em; */
+  
+  text-decoration: none;
+}
+
+.texto{
+  color:rgb(56, 138, 138);
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 1.9em;
+  line-height: 1.7em;
+  text-transform: none;
+  /* margin-top: -2em; */
+  transition: all 400ms ease;
+  text-decoration: none;
+}
