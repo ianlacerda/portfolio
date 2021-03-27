@@ -3,6 +3,14 @@ body {
     height: 100vh;
 }
 
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    background-blend-mode: luminosity;
+    color: inherit;
+    background-color: rgba(200 200 200 / 11%);
+}
 
 .avatar {
     height: 8em;
