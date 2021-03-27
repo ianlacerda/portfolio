@@ -214,3 +214,42 @@ background-color:rgb(187, 255, 255);
   background: white;
   box-shadow: 0px 0px 0px 1px #3A9292 inset;
 }
+
+
+
+/* Bio Content */
+
+
+
+.texto{
+  color:rgb(56, 138, 138);
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 1.9em;
+  line-height: 1.7em;
+  text-transform: none;
+  /* margin-top: -2em; */
+  transition: all 400ms ease;
+  text-decoration: none;
+}
+
+
+
+.food {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    width: 380px;
+}
+.food img {
+    max-width: 100%;
+    transition: all 0.3s;
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(1);
+}
+
+.food:hover img {
+    transform: scale(1.1);
+}
