@@ -6319,10 +6319,10 @@ p:last-child {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important; /* Increased visibility */
 }
 
-/* Case study projects sitemap grid borders */
+/* Case study projects sitemap grid */
 .w-layout-grid.case-studies-grid {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: none;
+  border-bottom: none;
   padding: 40px 0 !important;
 }
 
