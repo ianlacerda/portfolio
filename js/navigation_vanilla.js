@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (navWrapper) {
         const menu = navWrapper.querySelector('.w-nav-menu');
         if (menu) {
-          // Toggle Webflow's native open class on button
+          // Toggle native open class on button
           button.classList.toggle('w--open');
           
-          // Toggle Webflow's native open attribute and classes on menu and links
+          // Toggle native open attribute and classes on menu and links
           menu.classList.toggle('w--open');
           
           const isOpening = menu.classList.contains('w--open');
