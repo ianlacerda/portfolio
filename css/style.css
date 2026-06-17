@@ -8162,7 +8162,7 @@ html, body {
 
 .venn-text-title {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 31px !important;
+  font-size: 26px !important;
   font-weight: 700 !important;
   fill: #ffffff !important;
   text-anchor: middle !important;
@@ -8173,7 +8173,7 @@ html, body {
 
 .venn-text-item {
   font-family: 'Inter', sans-serif !important;
-  font-size: 26px !important;
+  font-size: 22px !important;
   font-weight: 500 !important;
   fill: #ffffff !important;
   text-anchor: middle !important;
@@ -8182,13 +8182,13 @@ html, body {
 }
 
 .center-title {
-  font-size: 31px !important;
+  font-size: 26px !important;
   font-weight: 700 !important;
   fill: #ffffff !important;
 }
 
 .center-item {
-  font-size: 24px !important;
+  font-size: 20px !important;
   font-weight: 500 !important;
   fill: #ffffff !important;
 }
@@ -8203,37 +8203,37 @@ html, body {
   
   /* Scale text down on mobile so it stays perfectly inside circles */
   .venn-text-title {
-    font-size: 24px !important;
+    font-size: 22px !important;
   }
   
   .venn-text-item {
-    font-size: 20px !important;
+    font-size: 18px !important;
   }
   
   .center-title {
-    font-size: 24px !important;
+    font-size: 22px !important;
   }
   
   .center-item {
-    font-size: 18px !important;
+    font-size: 17px !important;
   }
 }
 
 @media (max-width: 480px) {
   /* Even smaller devices */
   .venn-text-title {
-    font-size: 19px !important;
+    font-size: 18px !important;
   }
   
   .venn-text-item {
-    font-size: 16px !important;
+    font-size: 15px !important;
   }
   
   .center-title {
-    font-size: 19px !important;
+    font-size: 18px !important;
   }
   
   .center-item {
-    font-size: 14px !important;
+    font-size: 13px !important;
   }
 }
