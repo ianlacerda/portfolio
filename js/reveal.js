@@ -109,31 +109,55 @@
     }
 
     let ticking = false;
+    let viewportHeight = window.innerHeight;
+    let imageLayouts = [];
+    let measured = false;
+
+    function measureImages() {
+      viewportHeight = window.innerHeight;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      imageLayouts = targetImages.map(img => {
+        const rect = img.getBoundingClientRect();
+        return {
+          img,
+          absoluteTop: rect.top + scrollTop,
+          height: rect.height
+        };
+      });
+      measured = true;
+    }
 
     function updateParallax() {
-      const viewportHeight = window.innerHeight;
+      if (!measured) {
+        measureImages();
+      }
+
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const updates = [];
 
-      // 1. Batch READ: Query geometry of all target images first to avoid layout thrashing
-      targetImages.forEach(img => {
-        const rect = img.getBoundingClientRect();
+      imageLayouts.forEach(layout => {
+        // Calculate the relative top and bottom inside the current viewport
+        const rectTop = layout.absoluteTop - scrollTop;
+        const rectBottom = rectTop + layout.height;
+
         // Check if the image is within the viewport
-        if (rect.bottom > 0 && rect.top < viewportHeight) {
+        if (rectBottom > 0 && rectTop < viewportHeight) {
           // Calculate the image's center position relative to the viewport
-          const elementCenter = rect.top + rect.height / 2;
+          const elementCenter = rectTop + layout.height / 2;
           const viewportCenter = viewportHeight / 2;
           
           // Calculate distance from viewport center (normalized from -1 to 1)
-          const distanceFromCenter = (elementCenter - viewportCenter) / (viewportCenter);
+          const distanceFromCenter = (elementCenter - viewportCenter) / viewportCenter;
           
           // Calculate parallax shift (max 25px offset on homepage, 35px on case study details)
           const maxShift = isHome ? 25 : 35;
           const shift = distanceFromCenter * maxShift;
-          updates.push({ img, shift });
+          updates.push({ img: layout.img, shift });
         }
       });
 
-      // 2. Batch WRITE: Apply style updates in a separate loop
+      // Batch WRITE: Apply style updates in a separate loop
       updates.forEach(update => {
         update.img.style.setProperty('--parallax-y', `${update.shift.toFixed(1)}px`);
       });
@@ -148,10 +172,18 @@
       }
     }
 
+    function onResize() {
+      measured = false;
+      onScroll();
+    }
+
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll, { passive: true });
-    // Run initial positioning on page load
-    window.addEventListener('load', updateParallax);
-    updateParallax();
+    window.addEventListener('resize', onResize, { passive: true });
+    
+    // Measure and run initial positioning after window has fully loaded to prevent synchronous reflows during DOM building
+    window.addEventListener('load', () => {
+      measureImages();
+      updateParallax();
+    });
   });
 })();
