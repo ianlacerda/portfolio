@@ -3,31 +3,7 @@
    ========================================================================== */
 /* Force all standard text components (paragraphs, lists, blockquotes, subheadings) 
    in the case study pages to align to a clean 760px wide left-aligned reading column. */
-.ux-report-body p, 
-.ux-report-body ul, 
-.ux-report-body ol, 
-.ux-report-body blockquote, 
-.ux-report-body h2:not(.hero-subtitle-cs), 
-.ux-report-body h3, 
-.ux-report-body h4, 
-.ux-report-body .position-name-text,
-.ux-report-body .paragraph-light,
-.ux-report-body .pf-embed:not(.pf-iframe),
-.ux-report-body .sketch-caption-1,
-.ux-report-body .sketch-caption-2,
-.ux-report-body .figure-caption-sketches-1,
-.ux-report-body .figure-caption-sketches-2,
-.ux-report-body .figure-caption-empathy,
-.infinity-art-body p, 
-.infinity-art-body ul, 
-.infinity-art-body ol, 
-.infinity-art-body blockquote, 
-.infinity-art-body h2:not(.hero-subtitle-cs), 
-.infinity-art-body h3, 
-.infinity-art-body h4,
-.infinity-art-body .position-name-text,
-.infinity-art-body .paragraph-light,
-.infinity-art-body .pf-embed:not(.pf-iframe) {
+.ux-report-body p, .ux-report-body ul, .ux-report-body blockquote, .ux-report-body h2:not(.hero-subtitle-cs), .ux-report-body h3, .ux-report-body h4, .ux-report-body .position-name-text, .ux-report-body .paragraph-light, .ux-report-body .pf-embed:not(.pf-iframe), .ux-report-body .sketch-caption-1, .ux-report-body .sketch-caption-2, .ux-report-body .figure-caption-sketches-1, .ux-report-body .figure-caption-sketches-2, .ux-report-body .figure-caption-empathy, .infinity-art-body p, .infinity-art-body ul, .infinity-art-body blockquote, .infinity-art-body h2:not(.hero-subtitle-cs), .infinity-art-body h3, .infinity-art-body h4, .infinity-art-body .position-name-text, .infinity-art-body .paragraph-light, .infinity-art-body .pf-embed:not(.pf-iframe) {
   width: 100% !important;
   max-width: 760px !important;
   margin-left: auto !important;
@@ -37,13 +13,11 @@
 }
 
 /* Specific alignments for list paddings and list items */
-.ux-report-body ul, .ux-report-body ol,
-.infinity-art-body ul, .infinity-art-body ol {
+.ux-report-body ul, .infinity-art-body ul {
   padding-left: 24px !important;
 }
 
-.ux-report-body li,
-.infinity-art-body li {
+.ux-report-body li, .infinity-art-body li {
   text-align: left !important;
   margin-bottom: 8px !important;
   font-family: 'Montserrat', sans-serif !important;
@@ -52,8 +26,7 @@
   color: #2b2b2b !important;
 }
 
-.ux-report-body h2:not(.hero-subtitle-cs), .ux-report-body h3, .ux-report-body h4,
-.infinity-art-body h2:not(.hero-subtitle-cs), .infinity-art-body h3, .infinity-art-body h4 {
+.ux-report-body h2:not(.hero-subtitle-cs), .ux-report-body h3, .ux-report-body h4, .infinity-art-body h2:not(.hero-subtitle-cs), .infinity-art-body h3, .infinity-art-body h4 {
   font-family: 'Inter', sans-serif !important;
   font-weight: 700 !important;
   color: #1a1a1a !important;
@@ -61,18 +34,14 @@
   margin-bottom: 16px !important;
 }
 
-.ux-report-body p,
-.infinity-art-body p {
+.ux-report-body p, .infinity-art-body p {
   line-height: 1.65 !important;
   font-size: 0.98rem !important;
   color: #2b2b2b !important;
   margin-bottom: 24px !important;
 }
 
-/* Reset flex properties for caption elements to ensure left alignment */
-.figure-caption-empathy,
-.sketch-caption-1,
-.sketch-caption-2 {
+.sketch-caption-1, .sketch-caption-2 {
   display: block !important;
   text-align: left !important;
   height: auto !important; /* Remove height limits that could clip long caption text */
@@ -80,15 +49,13 @@
   margin-bottom: 24px !important;
 }
 
-.figure-caption-sketches-1,
-.figure-caption-sketches-2 {
+.figure-caption-sketches-1, .figure-caption-sketches-2 {
   text-align: left !important;
   margin-top: 0 !important;
 }
 
 /* Additional resets for container-2 and iframe wrappers to align to the 760px grid */
-.container-2,
-.figma-iframe-wrapper {
+.container-2, .figma-iframe-wrapper {
   max-width: 760px !important;
   width: 100% !important;
   margin-left: auto !important;
@@ -108,8 +75,7 @@
    ========================================================================== */
 
 /* Layout Architecture & Live Preview section standard layout */
-.layout-architecture-section,
-.live-preview-section-ux {
+.layout-architecture-section, .live-preview-section-ux {
   width: 100% !important;
   max-width: 100vw !important;
   margin-left: 0 !important;
@@ -124,8 +90,7 @@
 }
 
 /* Ensure alternating borders apply correctly */
-.ux-report-body .layout-architecture-section,
-.ux-report-body .live-preview-section-ux {
+.ux-report-body .layout-architecture-section, .ux-report-body .live-preview-section-ux {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
@@ -407,4 +372,3 @@
     padding-left: 12px;
   }
 }
-
