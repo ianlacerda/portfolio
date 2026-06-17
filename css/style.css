@@ -7889,7 +7889,7 @@ html, body {
   display: grid;
   grid-row: span 5;
   grid-template-rows: subgrid;
-  align-items: start;
+  align-items: stretch;
   box-sizing: border-box;
 }
 
