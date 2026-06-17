@@ -155,6 +155,12 @@
     targetY = window.innerHeight / 2;
   });
 
-  // Launch the animation update loop
-  update();
+  // Launch the animation update loop after page is fully loaded to free up CPU during first paint
+  if (document.readyState === 'complete') {
+    update();
+  } else {
+    window.addEventListener('load', () => {
+      setTimeout(update, 50);
+    });
+  }
 })();
