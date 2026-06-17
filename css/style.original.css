@@ -2359,7 +2359,8 @@ p:last-child {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
-.infinity-art-body .hero-section-cs {
+/* Ensure full-width hero header does not render a bottom border */
+.ux-report-body .hero-section-cs, .infinity-art-body .hero-section-cs {
   border-bottom: none !important;
 }
 
@@ -2526,7 +2527,8 @@ img + p, .interface-v1-img + p, .interface-v2-img + p, .interface-v3-img + p, if
   display: inline-block !important;
 }
 
-.bento-card-content a.bento-link-secondary, .bento-card-content a.bento-link-tertiary {
+/* Custom interactive pill button style for project links */
+.bento-card-content a.bento-link-primary, .bento-card-content a.bento-link-secondary, .bento-card-content a.bento-link-tertiary {
   display: inline-block !important;
   width: fit-content !important;
   padding: 10px 22px !important;
@@ -2930,6 +2932,14 @@ img + p, .interface-v1-img + p, .interface-v2-img + p, .interface-v3-img + p, if
   z-index: 1 !important;
 }
 
+/* Constrain Figma phone embed mockup container inside the standardized 900px live preview section */
+.figma-iframe-wrapper {
+  max-width: 900px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 /* Visual assets (images) inside the case studies grid should be aligned, look modern, and have hover zoom */
 .section img, .survey-graphs-section img, .persona-validation-section img, .validated-personas-section img, .audit-conclusions-section img, .sitemap-section img, .interface-dev-section img, .interface-v2-section img, .interface-v3-section img, .conclusion-section-inf img, .visual-direction-section img, .content-section-cs img, .live-preview-section-inf img, .conclusion-section-ux img {
   width: 100% !important;
@@ -2989,6 +2999,12 @@ img + p, .interface-v1-img + p, .interface-v2-img + p, .interface-v3-img + p, if
 /* Prevent clipping of zoomed images in cells and grids */
 .pf-layout-cell, .pf-layout-layout, .pf-layout-layout, .pf-layout-grid {
   overflow: visible !important;
+}
+
+/* Extra magnification for the massive competitive audit table to allow pixel-perfect legibility */
+.comp-audit-link {
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 .comp-audit-link:hover {
@@ -3116,6 +3132,27 @@ html, body {
   color: #fff !important;
 }
 
+/* ==========================================================================
+   Homepage (index.html) Scroll Arrow Overrides
+   ========================================================================== */
+
+/* Scroll Arrow section (replaces Case Studies section initially) */
+.scroll-arrow-section {
+  width: 100% !important;
+  height: calc(100vh - 500px) !important;
+  min-height: 250px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
+  cursor: pointer !important;
+  z-index: 1000 !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), height 0.8s cubic-bezier(0.16, 1, 0.3, 1), min-height 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, opacity, height;
+}
+
 @media (max-width: 991px) {
   .scroll-arrow-section {
     height: calc(100vh - 380px) !important;
@@ -3193,6 +3230,20 @@ html, body {
 /* Homepage mobile hamburger icon color (invert to make it white over dark background) */
 .home-body .menu-icon {
   filter: invert(1) !important;
+}
+
+/* Case study pages mobile menu dropdown background (light white background for dark links) */
+.navbar-case-study .pf-nav-menu[data-pf-menu-open] {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Homepage mobile menu dropdown background (dark background for light links) */
+.navbar-home .pf-nav-menu[data-pf-menu-open] {
+  background-color: #0c0d12 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4) !important;
 }
 
 /* Mobile Responsive Layout and Alignment Adjustments */
@@ -3600,6 +3651,62 @@ html, body {
   font-size: 20px !important;
   font-weight: 500 !important;
   fill: #ffffff !important;
+}
+
+/* Responsive styles for smaller screen form factors */
+@media (max-width: 767px) {
+  /* Prevent height stretching on mobile, keep aspect ratio and enable horizontal scrolling */
+  .venn-diagram-wrapper.main-wrapper {
+    height: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+    padding-bottom: 8px !important;
+  }
+  
+  /* Force the SVG to have a minimum width so it doesn't shrink below legibility */
+  .venn-diagram-wrapper.main-wrapper .venn-svg {
+    min-width: 640px !important;
+    width: 640px !important;
+    height: 320px !important; /* Maintain 2:1 aspect ratio */
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  /* Custom scrollbar for the scrollable main Venn wrapper on mobile */
+  .venn-diagram-wrapper.main-wrapper::-webkit-scrollbar {
+    height: 5px !important;
+  }
+  .venn-diagram-wrapper.main-wrapper::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.01) !important;
+    border-radius: 10px !important;
+  }
+  .venn-diagram-wrapper.main-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(0, 194, 255, 0.25) !important;
+    border-radius: 10px !important;
+  }
+  .venn-diagram-wrapper.main-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 194, 255, 0.4) !important;
+  }
+  
+  /* Scale text down on mobile so it stays perfectly inside circles */
+  .venn-text-title {
+    font-size: 28px !important;
+  }
+  
+  .venn-text-item {
+    font-size: 22px !important;
+  }
+  
+  .center-title {
+    font-size: 28px !important;
+  }
+  
+  .center-item {
+    font-size: 20px !important;
+  }
 }
 
 @media (max-width: 480px) {

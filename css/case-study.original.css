@@ -41,7 +41,8 @@
   margin-bottom: 24px !important;
 }
 
-.sketch-caption-1, .sketch-caption-2 {
+/* Reset flex properties for caption elements to ensure left alignment */
+.figure-caption-empathy, .sketch-caption-1, .sketch-caption-2 {
   display: block !important;
   text-align: left !important;
   height: auto !important; /* Remove height limits that could clip long caption text */
