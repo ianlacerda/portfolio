@@ -109,7 +109,7 @@
     }
 
     let ticking = false;
-    let viewportHeight = window.innerHeight;
+    let viewportHeight = 800; // static default to prevent forced reflow during script parsing
     let imageLayouts = [];
     let measured = false;
 
