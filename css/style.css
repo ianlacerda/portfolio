@@ -8195,45 +8195,66 @@ html, body {
 
 /* Responsive styles for smaller screen form factors */
 @media (max-width: 767px) {
-  /* Prevent height stretching on mobile, keep aspect ratio */
+  /* Prevent height stretching on mobile, keep aspect ratio and enable horizontal scrolling */
   .venn-diagram-wrapper.main-wrapper {
     height: auto !important;
-    aspect-ratio: 1200 / 600 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+    padding-bottom: 8px !important;
+  }
+  
+  /* Force the SVG to have a minimum width so it doesn't shrink below legibility */
+  .venn-diagram-wrapper.main-wrapper .venn-svg {
+    min-width: 640px !important;
+    width: 640px !important;
+    height: 320px !important; /* Maintain 2:1 aspect ratio */
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  /* Custom scrollbar for the scrollable main Venn wrapper on mobile */
+  .venn-diagram-wrapper.main-wrapper::-webkit-scrollbar {
+    height: 5px !important;
+  }
+  .venn-diagram-wrapper.main-wrapper::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.01) !important;
+    border-radius: 10px !important;
+  }
+  .venn-diagram-wrapper.main-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(0, 194, 255, 0.25) !important;
+    border-radius: 10px !important;
+  }
+  .venn-diagram-wrapper.main-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 194, 255, 0.4) !important;
   }
   
   /* Scale text down on mobile so it stays perfectly inside circles */
   .venn-text-title {
-    font-size: 22px !important;
+    font-size: 28px !important;
   }
   
   .venn-text-item {
-    font-size: 18px !important;
-  }
-  
-  .center-title {
     font-size: 22px !important;
   }
   
+  .center-title {
+    font-size: 28px !important;
+  }
+  
   .center-item {
-    font-size: 17px !important;
+    font-size: 20px !important;
   }
 }
 
 @media (max-width: 480px) {
-  /* Even smaller devices */
-  .venn-text-title {
-    font-size: 18px !important;
-  }
-  
-  .venn-text-item {
-    font-size: 15px !important;
-  }
-  
-  .center-title {
-    font-size: 18px !important;
-  }
-  
-  .center-item {
-    font-size: 13px !important;
+  /* On very small mobile screens, keep the same minimum width/height for the SVG
+     so that the layout and text size don't shrink further, maintaining perfect legibility */
+  .venn-diagram-wrapper.main-wrapper .venn-svg {
+    min-width: 640px !important;
+    width: 640px !important;
+    height: 320px !important;
   }
 }
