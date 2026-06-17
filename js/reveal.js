@@ -112,7 +112,9 @@
 
     function updateParallax() {
       const viewportHeight = window.innerHeight;
+      const updates = [];
 
+      // 1. Batch READ: Query geometry of all target images first to avoid layout thrashing
       targetImages.forEach(img => {
         const rect = img.getBoundingClientRect();
         // Check if the image is within the viewport
@@ -127,10 +129,13 @@
           // Calculate parallax shift (max 25px offset on homepage, 35px on case study details)
           const maxShift = isHome ? 25 : 35;
           const shift = distanceFromCenter * maxShift;
-
-          // Set the custom property on the image
-          img.style.setProperty('--parallax-y', `${shift.toFixed(1)}px`);
+          updates.push({ img, shift });
         }
+      });
+
+      // 2. Batch WRITE: Apply style updates in a separate loop
+      updates.forEach(update => {
+        update.img.style.setProperty('--parallax-y', `${update.shift.toFixed(1)}px`);
       });
 
       ticking = false;

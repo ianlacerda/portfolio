@@ -54,11 +54,13 @@
   // Common styles shared across all visual glow blobs
   const baseStyle = {
     position: 'absolute',
+    left: '0',
+    top: '0',
     borderRadius: '50%',
     filter: `blur(${blurAmount})`,
     webkitFilter: `blur(${blurAmount})`,
-    transform: 'translate(-50%, -50%)',
-    willChange: 'left, top, transform, border-radius',
+    transform: 'translate3d(0, 0, 0) translate(-50%, -50%)',
+    willChange: 'transform, border-radius',
     opacity: '0.9'
   };
 
@@ -125,20 +127,10 @@
     blob2.style.borderRadius = r2;
     blob3.style.borderRadius = r3;
 
-    // Apply absolute positions
-    blob1.style.left = `${b1.x}px`;
-    blob1.style.top = `${b1.y}px`;
-
-    blob2.style.left = `${b2.x}px`;
-    blob2.style.top = `${b2.y}px`;
-
-    blob3.style.left = `${b3.x}px`;
-    blob3.style.top = `${b3.y}px`;
-
-    // Apply rotations
-    blob1.style.transform = `translate(-50%, -50%) rotate(${time * 10}deg)`;
-    blob2.style.transform = `translate(-50%, -50%) rotate(${time * -15}deg)`;
-    blob3.style.transform = `translate(-50%, -50%) rotate(${time * 8}deg)`;
+    // Apply composited positions and rotations using translate3d to avoid layout thrashing (CLS)
+    blob1.style.transform = `translate3d(${b1.x}px, ${b1.y}px, 0) translate(-50%, -50%) rotate(${time * 10}deg)`;
+    blob2.style.transform = `translate3d(${b2.x}px, ${b2.y}px, 0) translate(-50%, -50%) rotate(${time * -15}deg)`;
+    blob3.style.transform = `translate3d(${b3.x}px, ${b3.y}px, 0) translate(-50%, -50%) rotate(${time * 8}deg)`;
 
     requestAnimationFrame(update);
   }
