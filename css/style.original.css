@@ -7366,22 +7366,16 @@ html, body {
 
 /* Collapsing other sections initially only if JS is enabled */
 .js-enabled .home-content-hidden {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  max-height: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  overflow: hidden !important;
-  border-bottom: none !important;
+  display: none !important;
 }
 
 .js-enabled .home-content-visible {
-  opacity: 1 !important;
-  visibility: visible !important;
-  max-height: none !important;
-  transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  animation: pfFadeIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes pfFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @media (max-width: 767px) {
