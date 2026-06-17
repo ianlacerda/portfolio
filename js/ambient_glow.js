@@ -87,31 +87,14 @@
   container.appendChild(blob2);
   container.appendChild(blob3);
 
-  // Default values to prevent layout querying during initial load parsing
-  let targetX = 600;
-  let targetY = 400;
+  // Use screen dimensions which do not trigger forced layout reflows, with safe fallbacks
+  let targetX = (typeof window !== 'undefined' && window.screen && window.screen.width) ? (window.screen.width / 2) : 600;
+  let targetY = (typeof window !== 'undefined' && window.screen && window.screen.height) ? (window.screen.height / 2) : 400;
 
   // Blob positions (starting at center defaults)
   let b1 = { x: targetX, y: targetY };
   let b2 = { x: targetX + 180, y: targetY - 120 };
   let b3 = { x: targetX - 150, y: targetY + 150 };
-
-  function initializeTarget() {
-    targetX = window.innerWidth / 2;
-    targetY = window.innerHeight / 2;
-    b1.x = targetX;
-    b1.y = targetY;
-    b2.x = targetX + 180;
-    b2.y = targetY - 120;
-    b3.x = targetX - 150;
-    b3.y = targetY + 150;
-  }
-
-  if (document.readyState === 'complete') {
-    initializeTarget();
-  } else {
-    window.addEventListener('load', initializeTarget);
-  }
 
   let time = 0;
 
