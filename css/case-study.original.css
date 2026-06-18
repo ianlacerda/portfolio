@@ -3,7 +3,7 @@
    ========================================================================== */
 /* Force all standard text components (paragraphs, lists, blockquotes, subheadings) 
    in the case study pages to align to a clean 760px wide left-aligned reading column. */
-.ux-report-body p, .ux-report-body ul, .ux-report-body blockquote, .ux-report-body h2:not(.hero-subtitle-cs), .ux-report-body h3, .ux-report-body h4, .ux-report-body .position-name-text, .ux-report-body .paragraph-light, .ux-report-body .pf-embed:not(.pf-iframe), .ux-report-body .sketch-caption-1, .ux-report-body .sketch-caption-2, .ux-report-body .figure-caption-sketches-1, .ux-report-body .figure-caption-sketches-2, .ux-report-body .figure-caption-empathy, .infinity-art-body p, .infinity-art-body ul, .infinity-art-body blockquote, .infinity-art-body h2:not(.hero-subtitle-cs), .infinity-art-body h3, .infinity-art-body h4, .infinity-art-body .position-name-text, .infinity-art-body .paragraph-light, .infinity-art-body .pf-embed:not(.pf-iframe) {
+.ux-report-body p, .ux-report-body ul, .ux-report-body ol, .ux-report-body blockquote, .ux-report-body h2:not(.hero-subtitle-cs), .ux-report-body h3, .ux-report-body h4, .ux-report-body .position-name-text, .ux-report-body .paragraph-light, .ux-report-body .pf-embed:not(.pf-iframe), .ux-report-body .sketch-caption-1, .ux-report-body .sketch-caption-2, .ux-report-body .figure-caption-sketches-1, .ux-report-body .figure-caption-sketches-2, .ux-report-body .figure-caption-empathy, .infinity-art-body p, .infinity-art-body ul, .infinity-art-body ol, .infinity-art-body blockquote, .infinity-art-body h2:not(.hero-subtitle-cs), .infinity-art-body h3, .infinity-art-body h4, .infinity-art-body .position-name-text, .infinity-art-body .paragraph-light, .infinity-art-body .pf-embed:not(.pf-iframe) {
   width: 100% !important;
   max-width: 760px !important;
   margin-left: auto !important;
@@ -13,7 +13,7 @@
 }
 
 /* Specific alignments for list paddings and list items */
-.ux-report-body ul, .infinity-art-body ul {
+.ux-report-body ul, .ux-report-body ol, .infinity-art-body ul, .infinity-art-body ol {
   padding-left: 24px !important;
 }
 
